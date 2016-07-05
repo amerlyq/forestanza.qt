@@ -1,0 +1,10 @@
+#!/bin/bash -e
+cd $(dirname "$(readlink -m "$0")")
+source ./funcs
+
+if distro arch; then
+  pkg_inst cmake qt5-base qt5-doc qt5-examples
+
+elif distro ubuntu; then
+  :
+fi
