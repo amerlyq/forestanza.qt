@@ -4,6 +4,7 @@ source ./funcs
 
 if distro arch; then
   pkg_inst cmake qt5-base qt5-doc qt5-examples
+  # aur_inst colout-git
 
 elif distro ubuntu; then
   :

@@ -1,11 +1,15 @@
-#include <qt/QtWidgets/QApplication>
-#include <QLabel>
+#include <QApplication>
+#include <QWidget>
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    QLabel hello("Hello world!");
 
-    hello.show();
+    QWidget window;
+
+    window.resize(250, 150);
+    window.setWindowTitle("Simple example");
+    window.show();
+
     return app.exec();
 }
