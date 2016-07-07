@@ -6,6 +6,9 @@ if distro arch; then
   pkg_inst cmake qt5-base qt5-doc qt5-examples
   # aur_inst colout-git
 
+  # pkg_inst mingw-w64
+  # aur_inst mingw-w64-cmake
+
 elif distro ubuntu; then
   :
 fi

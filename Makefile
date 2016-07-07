@@ -1,4 +1,6 @@
 O := ./build/cmake
+# CMAKE := cmake
+CMAKE := x86_64-w64-mingw32-cmake
 
 TARGS := $(shell sed -n 's/^\([-a-z]\+\):.*/\1/p' Makefile|sort -u|xargs)
 .PHONY: $(TARGS)
@@ -9,8 +11,10 @@ all: clean build
 # gccfilter -c cmake ...
 build:
 	mkdir -p $(O)
-	cmake -E chdir $(O) cmake $(shell pwd)
-	if hash colout; then cmake --build $(O) 2>&1 | colout -t cmake | colout -t g++; else cmake --build $(O); fi
+	# $(CMAKE) --version
+	# $(CMAKE) -E chdir $(O) $(CMAKE) $(shell pwd)
+	cd $(O) && $(CMAKE) $(shell pwd)
+	if hash colout; then $(CMAKE) --build $(O) 2>&1 | colout -t cmake | colout -t g++; else $(CMAKE) --build $(O); fi
 
 clean:
 	rm -rf ./build

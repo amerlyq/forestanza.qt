@@ -20,6 +20,8 @@ set(CMAKE_AUTOUIC ON)
 # to always look for includes there
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+# set (CMAKE_PREFIX_PATH "C:\\Qt\\Qt5.0.1\\5.0.1\\msvc2010\\")
+
 # Find the QtWidgets library
 # Widgets finds its own dependencies (QtGui and QtCore).
 find_package(Qt5Widgets REQUIRED)
